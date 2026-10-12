@@ -1,0 +1,652 @@
+:root {
+    /* Base Neutral (Cream / Beige) */
+    --pastel-cream-bg: #FAF7F2;
+    --pastel-cream-surface: #FFFFFF;
+    --pastel-cream-muted: #F3ECE2;
+    --pastel-border: #E8DFD3;
+    --pastel-border-focus: #B2D8C3;
+
+    /* Primary Accent (Baby Pink) */
+    --pastel-pink-subtle: #FDF0F5;
+    --pastel-pink: #F9D5E5;
+    --pastel-pink-hover: #F2BDD4;
+    --pastel-pink-text: #963659;
+
+    /* Baby Blue */
+    --pastel-blue-subtle: #F0F7FB;
+    --pastel-blue: #D0E8F2;
+    --pastel-blue-text: #2C5E7A;
+
+    /* Mint Green */
+    --pastel-mint-subtle: #EEF8F1;
+    --pastel-mint: #C5E8D0;
+    --pastel-mint-hover: #A9DAB8;
+    --pastel-mint-text: #205E38;
+
+    /* Lavender */
+    --pastel-lavender-subtle: #F7F1FB;
+    --pastel-lavender: #E8D7F1;
+    --pastel-lavender-text: #633B7E;
+
+    /* Peach */
+    --pastel-peach-subtle: #FFF4EF;
+    --pastel-peach: #FFE3D3;
+    --pastel-peach-text: #A34827;
+
+    /* Butter Yellow */
+    --pastel-butter-subtle: #FFFCEB;
+    --pastel-butter: #FFF0BD;
+    --pastel-butter-text: #7A5C07;
+
+    /* Contrast Typography */
+    --text-heading: #26282E;
+    --text-body: #3B3F48;
+    --text-muted: #6C727F;
+
+    /* Danger / Action */
+    --danger-subtle: #FDE8E8;
+    --danger-solid: #D94444;
+}
+
+body.theme-pastel {
+    background-color: var(--pastel-cream-bg);
+    color: var(--text-body);
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    line-height: 1.6;
+    min-height: 100vh;
+}
+
+/* Typography Helpers */
+.font-playfair {
+    font-family: 'Playfair Display', Georgia, serif;
+}
+
+/* Navbar Pastel */
+.navbar-pastel {
+    background-color: rgba(255, 255, 255, 0.94);
+    backdrop-filter: blur(8px);
+    border-bottom: 1px solid var(--pastel-border);
+}
+
+.brand-logo {
+    width: 46px;
+    height: 46px;
+    object-fit: cover;
+    border: 2px solid var(--pastel-pink);
+}
+
+.brand-title {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-weight: 700;
+    font-size: 1.35rem;
+    color: var(--text-heading);
+    line-height: 1.1;
+    letter-spacing: -0.02em;
+}
+
+.brand-tagline {
+    font-size: 0.72rem;
+    color: var(--text-muted);
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+}
+
+/* Nav Buttons */
+.btn-nav-primary {
+    background-color: var(--pastel-pink);
+    color: var(--pastel-pink-text);
+    border: 1px solid rgba(150, 54, 89, 0.15);
+    font-weight: 600;
+    font-size: 0.875rem;
+    padding: 0.5rem 1.1rem;
+    border-radius: 9999px;
+    transition: all 0.2s ease;
+}
+
+.btn-nav-primary:hover {
+    background-color: var(--pastel-pink-hover);
+    color: var(--pastel-pink-text);
+    transform: translateY(-1px);
+}
+
+.btn-nav-secondary {
+    background-color: var(--pastel-cream-muted);
+    color: var(--text-heading);
+    border: 1px solid var(--pastel-border);
+    font-weight: 500;
+    font-size: 0.875rem;
+    padding: 0.5rem 1rem;
+    border-radius: 9999px;
+    transition: all 0.2s ease;
+}
+
+.btn-nav-secondary:hover {
+    background-color: #EAE1D5;
+    color: var(--text-heading);
+}
+
+/* Section Header */
+.section-headline {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: 1.85rem;
+    font-weight: 700;
+    color: var(--text-heading);
+}
+
+.badge-count-pill {
+    background-color: var(--pastel-mint);
+    color: var(--pastel-mint-text);
+    font-weight: 600;
+    font-size: 0.8125rem;
+    padding: 0.4rem 0.9rem;
+    border-radius: 9999px;
+    border: 1px solid rgba(32, 94, 56, 0.15);
+}
+
+/* Product Cards */
+.product-card-item {
+    background-color: var(--pastel-cream-surface);
+    border: 1px solid var(--pastel-border);
+    border-radius: 16px;
+    overflow: hidden;
+    transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+}
+
+.product-card-item:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 10px 24px rgba(43, 45, 66, 0.07);
+    border-color: var(--pastel-pink-hover);
+}
+
+.product-image-frame {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 4 / 3;
+    overflow: hidden;
+    background-color: var(--pastel-cream-muted);
+}
+
+.product-card-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.35s ease;
+}
+
+.product-card-item:hover .product-card-img {
+    transform: scale(1.03);
+}
+
+.product-image-placeholder {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: var(--text-muted);
+    background: linear-gradient(135deg, var(--pastel-cream-muted) 0%, var(--pastel-pink-subtle) 100%);
+    font-size: 0.85rem;
+    font-weight: 500;
+}
+
+/* Category Badges with Dedicated Pastel Tones */
+.badge-category {
+    font-size: 0.72rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    padding: 0.35rem 0.75rem;
+    border-radius: 9999px;
+    display: inline-block;
+}
+
+.cat-bunga-potong {
+    background-color: var(--pastel-mint);
+    color: var(--pastel-mint-text);
+}
+
+.cat-bunga-hias {
+    background-color: var(--pastel-pink);
+    color: var(--pastel-pink-text);
+}
+
+.cat-tanaman-hias {
+    background-color: var(--pastel-peach);
+    color: var(--pastel-peach-text);
+}
+
+.cat-buket {
+    background-color: var(--pastel-lavender);
+    color: var(--pastel-lavender-text);
+}
+
+.cat-aksesori {
+    background-color: var(--pastel-blue);
+    color: var(--pastel-blue-text);
+}
+
+.cat-default {
+    background-color: var(--pastel-cream-muted);
+    color: var(--text-body);
+}
+
+/* Stock Badges */
+.badge-stock {
+    font-size: 0.75rem;
+    font-weight: 600;
+    padding: 0.3rem 0.65rem;
+    border-radius: 6px;
+}
+
+.badge-stock-normal {
+    background-color: var(--pastel-mint-subtle);
+    color: var(--pastel-mint-text);
+    border: 1px solid var(--pastel-mint);
+}
+
+.badge-stock-low {
+    background-color: var(--pastel-butter);
+    color: var(--pastel-butter-text);
+    border: 1px solid rgba(122, 92, 7, 0.2);
+}
+
+.badge-stock-empty {
+    background-color: var(--danger-subtle);
+    color: var(--danger-solid);
+    border: 1px solid rgba(217, 68, 68, 0.2);
+}
+
+/* Price Tag */
+.product-price-tag {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: var(--text-heading);
+}
+
+/* Card Actions */
+.card-action-bar {
+    border-top: 1px solid var(--pastel-border);
+    background-color: var(--pastel-cream-bg);
+}
+
+.btn-card-action {
+    font-size: 0.8125rem;
+    font-weight: 600;
+    padding: 0.65rem;
+    border: none;
+    background: transparent;
+    text-decoration: none;
+    transition: background-color 0.15s ease;
+}
+
+.btn-card-edit {
+    color: var(--pastel-blue-text);
+    border-right: 1px solid var(--pastel-border);
+}
+
+.btn-card-edit:hover {
+    background-color: var(--pastel-blue-subtle);
+    color: var(--pastel-blue-text);
+}
+
+.btn-card-delete {
+    color: var(--danger-solid);
+}
+
+.btn-card-delete:hover {
+    background-color: var(--danger-subtle);
+    color: var(--danger-solid);
+}
+
+/* Forms with Pastel Accent */
+.form-card-pastel {
+    background-color: var(--pastel-cream-surface);
+    border: 1px solid var(--pastel-border);
+    border-radius: 20px;
+    box-shadow: 0 6px 20px rgba(43, 45, 66, 0.04);
+}
+
+.form-header-pastel {
+    background: linear-gradient(135deg, var(--pastel-cream-muted) 0%, var(--pastel-pink-subtle) 100%);
+    border-bottom: 1px solid var(--pastel-border);
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+}
+
+.form-label {
+    font-weight: 600;
+    font-size: 0.875rem;
+    color: var(--text-heading);
+    margin-bottom: 0.4rem;
+}
+
+.form-control,
+.form-select {
+    background-color: #FAFAFA;
+    border: 1.5px solid var(--pastel-border);
+    border-radius: 10px;
+    padding: 0.65rem 0.9rem;
+    font-size: 0.9rem;
+    color: var(--text-body);
+    transition: border-color 0.15s ease, box-shadow 0.15s ease;
+}
+
+.form-control:focus,
+.form-select:focus {
+    background-color: #FFFFFF;
+    border-color: var(--pastel-border-focus);
+    box-shadow: 0 0 0 3px rgba(178, 216, 195, 0.35);
+    outline: none;
+}
+
+.form-text-hint {
+    font-size: 0.78rem;
+    color: var(--text-muted);
+}
+
+/* Buttons System Pastel */
+.btn-pastel-primary {
+    background-color: var(--pastel-mint);
+    color: var(--pastel-mint-text);
+    border: 1px solid rgba(32, 94, 56, 0.2);
+    font-weight: 600;
+    border-radius: 10px;
+    padding: 0.65rem 1.4rem;
+    transition: all 0.2s ease;
+}
+
+.btn-pastel-primary:hover {
+    background-color: var(--pastel-mint-hover);
+    color: var(--pastel-mint-text);
+    transform: translateY(-1px);
+}
+
+.btn-pastel-outline {
+    background-color: transparent;
+    color: var(--text-body);
+    border: 1.5px solid var(--pastel-border);
+    font-weight: 500;
+    border-radius: 10px;
+    padding: 0.65rem 1.2rem;
+    text-decoration: none;
+    transition: all 0.2s ease;
+}
+
+.btn-pastel-outline:hover {
+    background-color: var(--pastel-cream-muted);
+    color: var(--text-heading);
+    border-color: #D6CAB8;
+}
+
+.btn-pastel-danger {
+    background-color: var(--danger-solid);
+    color: #FFFFFF;
+    border: none;
+    font-weight: 600;
+    border-radius: 10px;
+    padding: 0.65rem 1.2rem;
+    transition: opacity 0.2s ease;
+}
+
+.btn-pastel-danger:hover {
+    opacity: 0.9;
+    color: #FFFFFF;
+}
+
+/* Image Upload Preview Box */
+.image-preview-frame {
+    width: 140px;
+    height: 140px;
+    border-radius: 12px;
+    border: 2px dashed var(--pastel-border);
+    background-color: var(--pastel-cream-muted);
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.image-preview-frame img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Flash Alerts Pastel */
+.alert-pastel-success {
+    background-color: var(--pastel-mint-subtle);
+    border: 1px solid var(--pastel-mint);
+    color: var(--pastel-mint-text);
+    border-radius: 12px;
+    font-weight: 500;
+}
+
+.alert-pastel-error {
+    background-color: var(--danger-subtle);
+    border: 1px solid #F5C2C7;
+    color: var(--danger-solid);
+    border-radius: 12px;
+    font-weight: 500;
+}
+
+/* Empty State Box */
+.empty-state-card {
+    background-color: var(--pastel-cream-surface);
+    border: 1.5px dashed var(--pastel-border);
+    border-radius: 20px;
+    padding: 4rem 2rem;
+}
+
+/* Card Pastel Standard */
+.card-pastel {
+    background-color: var(--pastel-cream-surface);
+    border-radius: 16px;
+    border: 1px solid var(--pastel-border) !important;
+}
+
+/* Table Pastel Styling */
+.table-pastel {
+    --bs-table-bg: transparent;
+    border-color: var(--pastel-border);
+}
+
+.table-pastel thead th {
+    background-color: var(--pastel-cream-muted);
+    color: var(--text-heading);
+    font-size: 0.825rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    padding: 0.75rem 1rem;
+    border-bottom: 1.5px solid var(--pastel-border);
+}
+
+.table-pastel tbody td {
+    padding: 0.85rem 1rem;
+    border-bottom: 1px solid var(--pastel-border);
+    font-size: 0.9rem;
+}
+
+.table-pastel tbody tr:hover {
+    background-color: rgba(253, 240, 245, 0.45);
+}
+
+.table-warning-soft {
+    background-color: rgba(255, 240, 189, 0.25) !important;
+}
+
+/* Badges & Role Indicators */
+.user-display-name {
+    font-size: 0.84rem;
+    font-weight: 600;
+    line-height: 1.2;
+    letter-spacing: -0.01em;
+}
+
+.badge-role {
+    font-size: 0.68rem;
+    font-weight: 600;
+    padding: 0.2rem 0.55rem;
+    border-radius: 9999px;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    display: inline-block;
+    line-height: 1.2;
+}
+
+.badge-role-admin {
+    background-color: var(--pastel-lavender);
+    color: var(--pastel-lavender-text);
+    border: 1px solid rgba(99, 59, 126, 0.2);
+}
+
+.badge-role-staff {
+    background-color: var(--pastel-blue);
+    color: var(--pastel-blue-text);
+    border: 1px solid rgba(44, 94, 122, 0.2);
+}
+
+/* Navigation Links Pastel */
+.nav-link-pastel {
+    color: var(--text-body);
+    font-weight: 500;
+    font-size: 0.9rem;
+    padding: 0.45rem 0.85rem !important;
+    border-radius: 8px;
+    transition: all 0.15s ease;
+}
+
+.nav-link-pastel:hover {
+    color: var(--text-heading);
+    background-color: var(--pastel-cream-muted);
+}
+
+.nav-link-pastel.active {
+    color: var(--text-heading) !important;
+    background-color: var(--pastel-pink);
+    font-weight: 600;
+}
+
+/* Secondary Button Pastel */
+.btn-pastel-secondary {
+    background-color: var(--pastel-peach);
+    color: var(--pastel-peach-text);
+    border: 1px solid rgba(163, 72, 39, 0.2);
+    font-weight: 600;
+    border-radius: 10px;
+    padding: 0.65rem 1.4rem;
+    transition: all 0.2s ease;
+    text-decoration: none;
+}
+
+.btn-pastel-secondary:hover {
+    background-color: #ffd2bb;
+    color: var(--pastel-peach-text);
+    transform: translateY(-1px);
+}
+
+/* Logout Nav Button */
+.btn-nav-logout {
+    background-color: transparent;
+    color: var(--danger-solid);
+    border: 1px solid rgba(217, 68, 68, 0.25);
+    font-size: 0.8125rem;
+    font-weight: 600;
+    padding: 0.4rem 0.85rem;
+    border-radius: 9999px;
+    transition: all 0.2s ease;
+    text-decoration: none;
+    line-height: 1.2;
+}
+
+.btn-nav-logout:hover {
+    background-color: var(--danger-subtle);
+    color: var(--danger-solid);
+    border-color: rgba(217, 68, 68, 0.45);
+    transform: translateY(-1px);
+}
+
+/* User Section in Navbar */
+.nav-user-section {
+    border-top: 1px solid var(--pastel-border);
+}
+
+@media (min-width: 992px) {
+    .nav-user-section {
+        border-top: none !important;
+    }
+}
+
+/* Dropdown Pastel */
+.dropdown-menu-pastel {
+    background-color: var(--pastel-cream-surface);
+    border: 1px solid var(--pastel-border);
+    border-radius: 12px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+    padding: 0.5rem;
+}
+
+.dropdown-menu-pastel .dropdown-item {
+    font-size: 0.875rem;
+    padding: 0.5rem 0.85rem;
+    border-radius: 8px;
+    color: var(--text-body);
+    font-weight: 500;
+    transition: all 0.15s ease;
+}
+
+.dropdown-menu-pastel .dropdown-item:hover {
+    background-color: var(--pastel-pink-subtle);
+    color: var(--pastel-pink-text);
+}
+
+/* Pagination Pastel */
+.pagination-pastel .page-link {
+    background-color: var(--pastel-cream-surface);
+    border-color: var(--pastel-border);
+    color: var(--text-body);
+    font-weight: 500;
+    padding: 0.35rem 0.75rem;
+}
+
+.pagination-pastel .page-item.active .page-link {
+    background-color: var(--pastel-pink);
+    border-color: var(--pastel-pink-hover);
+    color: var(--pastel-pink-text);
+    font-weight: 700;
+}
+
+.pagination-pastel .page-link:hover {
+    background-color: var(--pastel-cream-muted);
+    color: var(--text-heading);
+}
+
+/* Alert Pastel Generic */
+.alert-pastel {
+    border-radius: 12px;
+    font-weight: 500;
+}
+
+/* Colors Utilities */
+.bg-pastel-mint {
+    background-color: var(--pastel-mint) !important;
+}
+.bg-pastel-pink {
+    background-color: var(--pastel-pink) !important;
+}
+.bg-pastel-peach {
+    background-color: var(--pastel-peach) !important;
+}
+.bg-pastel-lavender {
+    background-color: var(--pastel-lavender) !important;
+}
+.bg-pastel-butter {
+    background-color: var(--pastel-butter) !important;
+}
+.border-pastel {
+    border-color: var(--pastel-border) !important;
+}
+
